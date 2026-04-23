@@ -20,3 +20,8 @@ A conversational AI chatbot built with Streamlit and the Google Gemini API that 
 3. Create a `.env` file with your Google AI Studio API key:
 
 4. Run the app: `streamlit run baking_chat.py`
+
+4. Run the app: `streamlit run baking_chat.py`
+
+## What I Learned
+Built this project while prepping for a summer internship working on an AI agent project. Covers core concepts including LLM API calls, conversation history management, system prompts, and deploying a simple frontend with Streamlit.
