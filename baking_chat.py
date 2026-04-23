@@ -13,6 +13,29 @@ if "history" not in st.session_state:
 
 st.title("Baking Assistant Chatbot")
 
+st.markdown("""
+    <style>
+        button[data-testid="stChatInputSubmitButton"] {
+            background-color: #ffe4ee !important;
+            border-color: #ffe4ee !important;
+        }
+        
+        [data-testid="stChatMessage"] {
+            background-color: #fff0f5 !important;
+            border-radius: 15px !important;
+        }
+    </style>
+""", unsafe_allow_html=True)
+
+with st.sidebar:
+    st.title("Chat History")
+    if len(st.session_state.history) == 0:
+        st.write("No messages yet!")
+    else:
+        for message in st.session_state.history:
+            role = "You" if message.role == "user" else "🍰 Baker Bot"
+            st.write(f"**{role}:** {message.parts[0].text[:50]}...")
+
 for message in st.session_state.history:
     role = "You" if message.role == "user" else "Gemini"
     st.chat_message(message.role).write(message.parts[0].text)
